@@ -14,8 +14,13 @@
         <li>Home</li>
         <li>Accounts</li>
         <li>Profile</li>
-        <li class="right">name</li>
-        <li class="right">Signup</li>
+        {% if request.user.is_authenticated %}
+        <li class="right"><a href="{% url 'logout' %}">Logout</a></li>
+        <li class="right">{{user.name}}</li>
+        {% else %}
+        <li class="right"><a href="{% url 'signup' %}">Signup</a></li>
+        <li class="right"><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
         
     </ul>
 
