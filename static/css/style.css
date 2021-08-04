@@ -23,3 +23,7 @@
     background-size: cover;
     
 }
+
+nav li a {
+    color: white;
+}
